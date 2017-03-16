@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/payne/jsdiff-demo1/issues"
   },
-  "homepage": "https://github.com/payne/jsdiff-demo1#readme"
+  "homepage": "https://github.com/payne/jsdiff-demo1#readme",
+  "dependencies": {
+    "diff": "^3.2.0"
+  }
 }
