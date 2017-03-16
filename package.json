@@ -1,0 +1,25 @@
+{
+  "name": "jsdiff-demo1",
+  "version": "0.0.1",
+  "description": "Simple attempt to use jsdiff in a jQuery application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/payne/jsdiff-demo1.git"
+  },
+  "keywords": [
+    "example",
+    "simple",
+    "jQuery",
+    "diff"
+  ],
+  "author": "Matt Payne",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/payne/jsdiff-demo1/issues"
+  },
+  "homepage": "https://github.com/payne/jsdiff-demo1#readme"
+}
