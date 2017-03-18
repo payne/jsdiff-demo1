@@ -1,0 +1,27 @@
+{
+  "name": "jsdiff-demo1",
+  "description": "Simple attempt to use jsdiff in a jQuery application",
+  "main": "index.js",
+  "authors": [
+    "Matt Payne"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "example",
+    "simple",
+    "jQuery",
+    "diff"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jsdiff": "^3.2.0"
+  }
+}

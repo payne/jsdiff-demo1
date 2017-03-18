@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/payne/jsdiff-demo1#readme",
   "dependencies": {
+    "bower": "^1.8.0",
     "diff": "^3.2.0"
   }
 }
