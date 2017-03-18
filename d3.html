@@ -1,0 +1,78 @@
+<html>
+<body>
+<h1>Demo Three -- adding diff</h1>
+<pre id="display"></pre>
+<script src="bower_components/jsdiff/diff.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/css/bootstrap-theme.min.css"></script>
+<script src="bower_components/bootstrap/dist/css/bootstrap.css"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script>
+
+var evilGlobalText="";
+
+var updateTextArea = function() {
+  var ta1 = $("#ta1");
+  var old = ta1.text();
+  console.log("old="+old);
+  var newText=old+evilGlobalText;
+  var color='';
+  var span=null;
+
+
+  var diff = JsDiff.diffChars(old, newText);
+  var display = document.getElementById('display');
+  var fragment = document.createDocumentFragment();
+
+diff.forEach(function(part){
+  // green for additions, red for deletions
+  // grey for common parts
+  color = part.added ? 'green' :
+    part.removed ? 'red' : 'grey';
+  span = document.createElement('span');
+  span.style.color = color;
+  span.appendChild(document
+    .createTextNode(part.value));
+  fragment.appendChild(span);
+});
+
+display.appendChild(fragment);
+
+  ta1.text(newText);
+}
+
+var repeatHandler = function(e) {
+  console.log(e);
+  //if (e.is(":checked")) { console.log("Checked"); } else { console.log("NOT Checked"); }
+  evilGlobalText="At the risk of repeating myself!\n";
+  updateTextArea();
+}
+
+var badHandler = function(e) {
+  console.log(e);
+  //if (e.is(":checked")) { console.log("Checked"); } else { console.log("NOT Checked"); }
+  evilGlobalText="This is bad!!\n";
+  updateTextArea();
+}
+
+
+$(document).ready(function() {
+  $("#repeat").change(repeatHandler);
+  $("#bad").change(badHandler);
+  console.log("Ready.  Tried to set change handler.");
+});
+
+</script>
+
+<form>
+  <textarea rows=10 col=60 name="ta1" id="ta1"></textarea>
+  <hr>
+  <input type="checkbox" id="repeat"/> Repeat <br>
+  <input type="checkbox" id="bad"/> Bad<br>
+</form>
+
+<pre id="display"></pre>
+
+</body>
+<html>
+
